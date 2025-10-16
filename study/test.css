@@ -1,0 +1,19 @@
+.big{
+    font: size 100px;
+}
+.blue
+{
+    color: blue;
+}
+* {
+    background-color: yellow;
+}
+a {
+    color: black;
+}
+a:hover{
+    color: red;
+}
+a:active{
+    color: green;
+}
