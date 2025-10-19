@@ -1,19 +1,51 @@
-.big{
-    font: size 100px;
-}
-.blue
+*
 {
-    color: blue;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-* {
-    background-color: yellow;
+html, body
+{
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
 }
-a {
-    color: black;
+section[class^="section"]
+{
+    width: 100%;
+    height: 100%;
 }
-a:hover{
-    color: red;
+section[class^="section"] h2
+{
+    text-align: center;
+    font-weight: 400px;
+    font-size: 60px;
+    margin-top: 200px;
+    letter-spacing: 10px;
 }
-a:active{
-    color: green;
+.section1
+{
+    background: url(./png/bg1.jpg) no-repeat fixed center center/cover;
+}
+.section2
+{
+    background:url(./png/bg2.jpg) no-repeat fixed center center/cover;
+}
+.section3
+{
+    background:url(./png/bg3.jpg) no-repeat fixed center center/cover;
+}
+.section4
+{
+    background:url(./png/bg4.jpg) no-repeat fixed center center/cover;
+}
+.content
+{
+    width: 100%;
+    height: 25%;
+    background-color: rgb(0,0,0,0.9);
+    color:#fff;
+    line-height: 30px;
+    font-size: 16px;
+    padding: 20px;
 }

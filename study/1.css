@@ -1,0 +1,89 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+a
+{
+    text-decoration: none;
+}
+ul,li
+{
+    list-style: none;
+}
+
+.icon-bianji
+{
+    font-size: 40px;
+    color: red;
+}
+.box
+{
+    width: 158px;
+    height: 155px;
+    background:url(./sprite/OIP-C.webp) no-repeat
+}
+.box1
+{
+    background-position: -159px -158px;
+}
+.subbar     
+{
+    width: 234px;
+    height: 460px;  
+    background-color: #9b9b9b;
+    margin:100px auto;
+    padding: 20px 0;
+    font-size: 14px;
+}
+.subbar ul li a{
+    display: block;
+    line-height: 42px;
+    height: 42px;
+   padding-left: 20px; ;
+}
+.subbar ul li a:hover
+{
+    background-color: #ff6700;
+}
+.list
+{
+    width: 400px;
+    height: 400px;
+    border: 1px solid red;
+    margin: 0 auto;
+    font-size: 0;
+}
+.list a
+{
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    background-color: #ccc;
+    border-radius: 5px;
+    font-size: 12px;
+    padding: 0 15px;
+    margin: 4px;
+
+}
+.list li{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: #ff6700;
+    font-size: 12px;
+}
+.box2
+{
+    display: flex;
+    width: 500px;
+    height: 100px;
+    border: 1px solid green;
+}
+.box2 .item
+{
+    width: 200px;
+    background-color: purple;
+    border-radius: 10px;
+}
