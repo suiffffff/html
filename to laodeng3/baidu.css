@@ -17,8 +17,8 @@ ol,ul
 }
 html,body       
 {  
-    width: 1684px;
-    height: 610px;
+    width: 100%;
+    height: 100%;
 }
 .clear
 {
@@ -197,9 +197,12 @@ textarea {
 }
 .belowbox .title
 {
+    display: flex;
+    justify-content: space-between;
     width: 100%;
     height: 24px;
     margin-bottom: 18px ;
+    margin-bottom: 18px;
 }
 .belowbox img:first-child
 {
@@ -211,9 +214,69 @@ textarea {
     width: auto;
     height: 14px;
 }
+.belowbox .title div
+{
+    font-size: 14px;
+    color: #bbbbbb;
+}
+.belowbox .title a:hover .iconfont
+{
+    color: #4e6ef2; 
+}
+.belowbox .hot 
+{
+    width: 745px;
+    height: 180px;
+}
+.belowbox .hot ul
+{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-between;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
 .belowbox li
 {
-
+    margin: 0;
+    padding: 0;
+    width: 369px;
+    height: 36px;
+    font-size: 16px;
+    line-height: 36px;
+}
+.belowbox li span
+{
+     color: #9195a3;
+     margin-right: 4px;
+}
+.belowbox li span.icon-zhiding
+{
+    color: #f63051;
+}
+.belowbox li span.icon-1
+{
+    color: #fe2d46;
+}
+.belowbox li span.icon-2
+{
+    color: #f60;
+}
+.belowbox li span.icon-3
+{
+    color: #faa90e;
+}
+.belowbox li a
+{
+    text-decoration: none; 
+}
+.belowbox li a:hover
+{
+    color: #4e6ef2; 
+    text-decoration: underline; 
 }
 .buttonbox
 {
