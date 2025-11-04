@@ -36,6 +36,9 @@
  }
  /* 1.2搜索框 */
  .header{
+   position: sticky;
+   top: 0;
+   z-index: 999;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -71,6 +74,16 @@
     color:#5eb69c;
     border-bottom: #5eb69c 2px solid;
  }
+ .search{
+   position:relative;
+ }
+ .search i{
+   font-size: 24px;
+   top: 5px;
+   left: 0px;
+   color: #ccc;
+   position:absolute;
+ }
  .search input{
     width: 170px;
     height: 40px;
@@ -80,6 +93,18 @@
  .search input::placeholder{
     font-size: 16px;
     color:#ccc;
+ }
+ .car{
+   position: relative;
+ }
+ .car span{
+   position: absolute;
+   top: -8px;
+   left: 24px;;
+   padding: 2px 8px;
+   background-color: #e26237;
+   border-radius: 50%;
+   color:#fff;
  }
  .car i{
     font-size: 40px;
@@ -150,4 +175,13 @@
     display: flex;
     text-align: center;
     gap: 55px;
+}
+.copyright{
+   text-align: center;
+   margin-top: 100px;
+   line-height: 30px;
+   color:#a1a1a1;
+}
+.copyright p a{
+    color:#a1a1a1;
 }
