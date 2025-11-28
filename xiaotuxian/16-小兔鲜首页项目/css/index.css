@@ -309,8 +309,15 @@ background-color: #00be9a;
     flex: 1;
     height: 355px;
 }
+.news .img{
+    overflow: hidden;
+}
+.news ul li:hover img{
+    transform: scale(1.2);
+}
 .news ul li img{
     width: 100%;
+    transition: all 0.3s;
 }
 .news .con{
     display: flex;
