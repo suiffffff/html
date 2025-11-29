@@ -40,15 +40,64 @@
   ]
   const img = document.querySelector('.slider-wrapper img')
   const p = document.querySelector('.slider-footer p')
+  const color = document.querySelector('.slider-footer')
   let i = 0;
-  setInterval(function () {
+  let id = setInterval(function () {
     i++
     i %= 6
     img.src = sliderData[i].url
     p.innerHTML = sliderData[i].title
+    color.style.backgroundColor = sliderData[i].color
     document.querySelector('.slider-indicator .active').classList.remove('active')
     document.querySelector(`.slider-indicator li:nth-child(${i + 1})`).classList.add('active')
   }, 1000)
+  const prev = document.querySelector('.prev')
+  const next = document.querySelector('.next')
+  prev.addEventListener('click', function () {
+    i = i === 0 ? 5 : i - 1
+    img.src = sliderData[i].url
+    p.innerHTML = sliderData[i].title
+    color.style.backgroundColor = sliderData[i].color
+    document.querySelector('.slider-indicator .active').classList.remove('active')
+    document.querySelector(`.slider-indicator li:nth-child(${i + 1})`).classList.add('active')
+  })
+  prev.addEventListener('mouseenter', function () {
+    clearInterval(id)
+  })
+  prev.addEventListener('mouseleave', function () {
+    id = setInterval(function () {
+      i++
+      i %= 6
+      img.src = sliderData[i].url
+      p.innerHTML = sliderData[i].title
+      color.style.backgroundColor = sliderData[i].color
+      document.querySelector('.slider-indicator .active').classList.remove('active')
+      document.querySelector(`.slider-indicator li:nth-child(${i + 1})`).classList.add('active')
+    }, 1000)
+  })
+  next.addEventListener('click', function () {
+    i++
+    i %= 6
+    img.src = sliderData[i].url
+    p.innerHTML = sliderData[i].title
+    color.style.backgroundColor = sliderData[i].color
+    document.querySelector('.slider-indicator .active').classList.remove('active')
+    document.querySelector(`.slider-indicator li:nth-child(${i + 1})`).classList.add('active')
+  })
+  next.addEventListener('mouseenter', function () {
+    clearInterval(id)
+  })
+  next.addEventListener('mouseleave', function () {
+    id = setInterval(function () {
+      i++
+      i %= 6
+      img.src = sliderData[i].url
+      p.innerHTML = sliderData[i].title
+      color.style.backgroundColor = sliderData[i].color
+      document.querySelector('.slider-indicator .active').classList.remove('active')
+      document.querySelector(`.slider-indicator li:nth-child(${i + 1})`).classList.add('active')
+    }, 1000)
+  })
 
 </script>
 
