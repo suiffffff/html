@@ -1,18 +1,23 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-html,body{
+
+html,
+body {
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-a{
+
+a {
     text-decoration: none;
+    color: black;
 }
-.box{
+
+.box {
     position: relative;
     overflow: hidden;
     width: 360px;
@@ -22,12 +27,14 @@ a{
     border-radius: 10px;
     transition: all 0.5s;
 }
-.box:hover{
-      transform: translateY(-20px);
-       border: 2px solid yellow;
+
+.box:hover {
+    transform: translateY(-20px);
+    border: 2px solid yellow;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-.box img{
+
+.box img {
     position: absolute;
     top: 0;
     left: 50%;
@@ -39,10 +46,13 @@ a{
     transition: all 1s;
     cursor: grab;
 }
-.box img:hover{
+
+.box img:hover {
     transform: translateX(-50%) rotate(360deg);
 }
-.left, .right {
+
+.left,
+.right {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -63,7 +73,7 @@ a{
 }
 
 
-.naicha{
+.naicha {
     position: absolute;
     bottom: -80px;
     width: 100%;
@@ -74,7 +84,8 @@ a{
     align-items: center;
     transition: all .5s;
 }
-.box:hover .naicha{
+
+.box:hover .naicha {
     transform: translateY(-80px);
 }
 
