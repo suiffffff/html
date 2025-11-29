@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./LV2-附属1.css">
+</head>
+
+<body>
+  <textarea name="" id="" cols="60" rows="10">
+          奶茶受赠人免责及权益保障协议
+          
+          版本号： V2025.11.29
+          生效日期： 吸管插入即刻生效
+          
+          【前言】
+          
+          欢迎阅读《奶茶受赠人免责及权益保障协议》（以下简称“本协议”）。本协议系受赠人（以下简称“甲方/喝奶茶的人”）与赠与人（以下简称“乙方/买单的人”）就高热量饮品无偿移转事宜达成的免责契约。
+          
+          鉴于乙方具有强烈的投喂意愿，甲方本着“助人为乐”及“不忍拒绝”的精神，同意接受本次赠与。乙方在支付前请知悉：甲方只负责喝，不负责其他。
+          
+          第一条 赠与的单向性与自愿性
+          
+          纯粹赠与：乙方确认，本次买单行为完全基于乙方对甲方的喜爱、崇拜或单纯的钱多没处花，系纯粹的单向赠与。
+          
+          无对价义务：本赠与不附带任何交换条件。甲方接受奶茶，不代表承诺“下次回请”、“帮忙加班”或“答应追求”。
+          
+          第二条 受赠人免责条款（核心条款）
+          
+          甲方在接收及饮用奶茶过程中，对以下后果享有完全的豁免权，责任由乙方或不可抗力承担：
+          
+          身材连带责任豁免（甩锅条款）：若甲方因饮用本奶茶导致体重增加、脸变圆或戒糖失败，实属乙方“恶意诱惑”所致。乙方作为热量提供者，不得嘲笑甲方发胖，并需承担全部心理安慰责任。
+          
+          人情债务豁免：奶茶喝完即两清。甲方不因此背负任何“人情债”，乙方不得在未来以此为筹码进行道德绑架，或要求甲方请吃价格高于奶茶十倍的火锅。
+          
+          口味风险豁免：若乙方未按甲方指定参数（如三分糖、去冰）购买，导致奶茶难以下咽，甲方有权拒绝饮用或只喝两口即丢弃，且无需承担“浪费粮食”的道德压力。
+          
+          第三条 附则
+          
+          本协议自乙方付款成功之日起生效，具有不可撤销性。
+          
+          乙方不得以“我就客气一下”为由要求撤回赠与，亦不得在甲方喝到一半时投以心疼钱的目光。
+          
+          确认赠与人（乙方）： ___________（签字画押）
+          日期： 即日
+      </textarea>
+  <br>
+  <button class="btn" disabled>我已经阅读并同意捐赠协议(10)</button>
+  <script>
+    const btn = document.querySelector('.btn')
+    console.log(btn.innerHTML)
+    let i = 10;
+    let n = setInterval(function () {
+      i--
+      btn.innerHTML = `我已经阅读并同意捐赠协议协议(${i})`
+      if (i === 0) {
+        clearInterval(n)
+        btn.disabled = false
+        btn.innerHTML = '我已阅读并同意捐赠协议'
+      }
+    }, 1000)
+    btn.addEventListener('click', function () {
+      if (!btn.disabled) {
+        const userInput = prompt('请输入捐赠人:');
+        if (userInput !== null) {
+          window.location.href = './LV2-附属2.html';
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
