@@ -7,74 +7,74 @@
   <title>Document</title>
   <link rel="stylesheet" href="./LV2-附属2.css">
 </head>
-<div class="slider">
-  <div class="slider-wrapper">
-    <img src="./images/slider01.jpg" alt="" />
-  </div>
-  <div class="slider-footer">
-    <p>茶百道也不错</p>
-    <ul class="slider-indicator">
-      <li class="active"></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
-    <div class="toggle">
-      <button class="prev">&lt;</button>
-      <button class="next">&gt;</button>
-    </div>
-  </div>
-</div>
-<script>
-  // 1. 初始数据
-  const sliderData = [
-    { url: './img/chabaidao.png', title: '茶百道我一直能接受', color: 'rgb(100, 67, 68)' },
-    { url: './img/guming.webp', title: '古茗很有格调', color: 'rgb(43, 35, 26)' },
-    { url: './img/hushang.jpg', title: '沪上的杨枝甘露很好喝', color: 'rgb(36, 31, 33)' },
-    { url: './img/mixue.png', title: '蜜雪冰城是我的好朋友', color: 'rgb(36, 31, 33)' },
-    { url: './img/shuyi.jpg', title: '书亦也很不错', color: 'rgb(36, 31, 33)' },
-    { url: './img/yidiandian.png', title: '一点点也很好喝', color: 'rgb(166, 131, 143)' },
-
-  ]
-  const img = document.querySelector('.slider-wrapper img')
-  const p = document.querySelector('.slider-footer p')
-  const color = document.querySelector('.slider-footer')
-  let i = 0;
-  let id = setInterval(function () {
-    next.click()
-  }, 1000)
-  const prev = document.querySelector('.prev')
-  const next = document.querySelector('.next')
-  prev.addEventListener('click', function () {
-    i = i === 0 ? sliderData.length - 1 : i - 1
-    toggle()
-  })
-  next.addEventListener('click', function () {
-    i++
-    i %= sliderData.length
-    toggle()
-  })
-  const slider = document.querySelector('.slider')
-  slider.addEventListener('mouseenter', function () {
-    clearInterval(id)
-  })
-  slider.addEventListener('mouseleave', function () {
-    id = setInterval(function () {
-      next.click()
-    }, 1000)
-  })
-  function toggle() {
-    img.src = sliderData[i].url
-    p.innerHTML = sliderData[i].title
-    color.style.backgroundColor = sliderData[i].color
-    document.querySelector('.slider-indicator .active').classList.remove('active')
-    document.querySelector(`.slider-indicator li:nth-child(${i + 1})`).classList.add('active')
-  }
-</script>
 
 <body>
+  <div class="slider">
+    <div class="slider-wrapper">
+      <img src="./images/slider01.jpg" alt="" />
+    </div>
+    <div class="slider-footer">
+      <p>茶百道也不错</p>
+      <ul class="slider-indicator">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <div class="toggle">
+        <button class="prev">&lt;</button>
+        <button class="next">&gt;</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    // 1. 初始数据
+    const sliderData = [
+      { url: './img/chabaidao.png', title: '茶百道我一直能接受', color: 'rgb(100, 67, 68)' },
+      { url: './img/guming.webp', title: '古茗很有格调', color: 'rgb(43, 35, 26)' },
+      { url: './img/hushang.jpg', title: '沪上的杨枝甘露很好喝', color: 'rgb(36, 31, 33)' },
+      { url: './img/mixue.png', title: '蜜雪冰城是我的好朋友', color: 'rgb(36, 31, 33)' },
+      { url: './img/shuyi.jpg', title: '书亦也很不错', color: 'rgb(36, 31, 33)' },
+      { url: './img/yidiandian.png', title: '一点点也很好喝', color: 'rgb(166, 131, 143)' },
+
+    ]
+    const img = document.querySelector('.slider-wrapper img')
+    const p = document.querySelector('.slider-footer p')
+    const color = document.querySelector('.slider-footer')
+    let i = 0;
+    let id = setInterval(function () {
+      next.click()
+    }, 1000)
+    const prev = document.querySelector('.prev')
+    const next = document.querySelector('.next')
+    prev.addEventListener('click', function () {
+      i = i === 0 ? sliderData.length - 1 : i - 1
+      toggle()
+    })
+    next.addEventListener('click', function () {
+      i++
+      i %= sliderData.length
+      toggle()
+    })
+    const slider = document.querySelector('.slider')
+    slider.addEventListener('mouseenter', function () {
+      clearInterval(id)
+    })
+    slider.addEventListener('mouseleave', function () {
+      id = setInterval(function () {
+        next.click()
+      }, 1000)
+    })
+    function toggle() {
+      img.src = sliderData[i].url
+      p.innerHTML = sliderData[i].title
+      color.style.backgroundColor = sliderData[i].color
+      document.querySelector('.slider-indicator .active').classList.remove('active')
+      document.querySelector(`.slider-indicator li:nth-child(${i + 1})`).classList.add('active')
+    }
+  </script>
 
 </body>
 
