@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function fn() {
+      console.log('我来咯')
+    }
+    let n = setInterval(function () {
+      console.log('一秒一次')
+    }, 1000);
+    let a = setInterval(function () {
+      console.log('一秒一次')
+    }, 1000);
+    console.log(n)
+    console.log(a)
+    clearInterval(n)
+    // setInterval(fn, 1000)
+  </script>
+</body>
+
+</html>
