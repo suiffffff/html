@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //根据运行结果，我们可以得知......
+    //嘻嘻,不闹了，开始分析
+
+    // 声明了一个挂在window的变量name，这个作用域是全局的嘛，很重要的喔学姐，圈起来拷打
+    var name = 'window'
+    //定义函数，name接受参数，function会产生作用域，这里是第一层作用域
+    // 顺便一提用惯了强语言类型javascript这种用着感觉很不舒服欸，什么东西都能往函数里面传
+    function Person(name) {
+      //this嘛...记住谁调用，this就是谁应该比较好 
+      //但需要注意的是，在这一层this已经有了（调用的）之后产生的作用域会看上一层的this
+      // 这里就是箭头函数和普通this的...我们可以叫继承性的问题吧？往下看好啦
+      this.name = name
+      //function会产生一个作用域，在这个作用域上方，就是它继承的对象,上方没有对象调用的话，function就指向了全局
+      //我们可以将函数的作用域想象成下属，下属自然还会有下属
+      //下属自然是要听上级的命令嘛，所以this就相当于上级发布的命令， 施令者 . 受令者 ，欸，是不是形象多了？
+      //那么众所周知，在中世纪，下属的下属不是我的下属...继承不了呀？
+      this.foo1 = function () {
+        console.log(this.name)
+      }
+      //而这里的箭头函数则是可以比作官官相护，不能再说了奥，心里明白就好
+      //下面的人知道上面的人是谁，也知道上面的上面的人是谁，自然就知道为谁办事了嘛（继承开始了）
+      //这里的this就是指向调用foo2的对象
+      this.foo2 = () => console.log(this.name)
+      //这里和上面是有点区别的，逻辑也有点绕，看似是又套了一层，其实没有那么简单。
+      //foo3（）是什么？是一个返回的函数，也就是function(){...}
+      //那么问题来了，第二层的对象会被这个返回的函数继承吗？
+      //我们这里回归本质
+      //一开始说过，this 是在调用的那一刻决定的
+      //那么这里，第二层的对象有用吗？
+      //答案是没有，因为之后在调用就变成了 foo3（无论什么）（）=function（），没有人调用，这里的对象也就丢失了
+      this.foo3 = function () {
+        return function () {
+          console.log(this.name)
+        }
+      }
+      //那这里为什么又和上面不一样呢？
+      //我们还是要回归本质
+      //箭头函数中，this 是在出生（定义）的那一刻决定的
+      //第二层函数是什么环境？那么它出生的时候，是不是就是什么环境？
+      //这就是箭头函数和普通this的不同。
+      this.foo4 = function () {
+        return () => {
+          console.log(this.name)
+        }
+      }
+    }
+    //没有对象就new一个（new xuejie）
+    //这里的new将person1的this指向了person1，就是一个中间商啦
+    //相当于 person1 . person，person1的下属是person，里面第一层的this自然成了person1，下面也是一样的
+    var person1 = new Person('person1')
+    var person2 = new Person('person2')
+    //唔逻辑已经理的够清晰了的吧？那我们这里快问快答了
+    //person1
+    person1.foo1()
+    //call是显示指名嘛，所以这里的this就变成了person2
+    //person2
+    person1.foo1.call(person2)
+    //person1
+    person1.foo2()
+    //这里补充一下，我们之前说了箭头函数是继承，那么现在有个人喊：别继承你家的亿万资产了！你愿意吗？
+    //开个玩笑，这里主要是优先级的问题，箭头函数的优先级更高
+    //person1
+    person1.foo2.call(person2)
+    //window
+    person1.foo3()()
+    //window
+    person1.foo3.call(person2)()
+    //person2
+    person1.foo3().call(person2)
+    //person1
+    person1.foo4()()
+    //person2
+    person1.foo4.call(person2)()
+    //person1
+    person1.foo4().call(person2)
+  </script>
+</body>
+
+</html>
