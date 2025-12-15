@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      height: 3000px;
+      padding-top: 100px;
+    }
+
+    div {
+      display: none;
+      overflow: scroll;
+      width: 200px;
+      height: 200px;
+      margin: 100px;
+    }
+  </style>
+</head>
+<div>
+  这里是一个快乐的小朋友
+  这里是一个快乐的小朋友
+  这里是一个快乐的小朋友
+  这里是一个快乐的小朋友
+  这里是一个快乐的小朋友
+  这里是一个快乐的小朋友
+  这里是一个快乐的小朋友
+  这里是一个快乐的小朋友
+  这里是一个快乐的小朋友
+  这里是一个快乐的小朋友
+  这里是一个快乐的小朋友
+  这里是一个快乐的小朋友
+  这里是一个快乐的小朋友
+  这里是一个快乐的小朋友
+  这里是一个快乐的小朋友
+  这里是一个快乐的小朋友
+  这里是一个快乐的小朋友
+  这里是一个快乐的小朋友
+  这里是一个快乐的小朋友
+  这里是一个快乐的小朋友
+  这里是一个快乐的小朋友
+  这里是一个快乐的小朋友
+  这里是一个快乐的小朋友
+
+</div>
+
+<body>
+  <script>
+    document.documentElement.scrollTop = 800
+    const div = document.querySelector('div')
+    window.addEventListener('scroll', function () {
+      const n = document.documentElement.scrollTop
+      if (n > 100) {
+        div.style.display = 'block'
+      }
+    })
+    /* window.addEventListener('scroll', function () {
+      console.log('动起来咯')
+    }) */
+    /*  const div = document.querySelector('div')
+     div.addEventListener('scroll', function () {
+       console.log(div.scrollTop)
+     }) */
+  </script>
+</body>
+
+</html>

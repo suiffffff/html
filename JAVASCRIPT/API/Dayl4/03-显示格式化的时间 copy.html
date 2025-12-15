@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 300px;
+      height: 40px;
+      text-align: center;
+      border: 1px solid red;
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+  <script>
+    function getMyDate() {
+      const date = new Date()
+      let h = date.getHours()
+      h = h < 10 ? '0' + h : h
+      let m = date.getMinutes()
+      m = m < 10 ? '0' + m : m
+      let s = date.getSeconds()
+      s = s < 10 ? '0' + s : s
+      const year = date.getFullYear()
+      const month = date.getMonth() + 1
+      const day = date.getDate()
+
+      return `今天是${year}年${month}月${day}日 ${h}:${m}:${s}`
+    }
+    const div = document.querySelector('div')
+    div.innerHTML = getMyDate()
+
+    setInterval(function () {
+      div.innerHTML = getMyDate()
+    }, 1000)
+  </script>
+</body>
+
+</html>
