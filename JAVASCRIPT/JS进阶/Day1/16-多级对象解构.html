@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // const pig = {
+    //   name: 'mengbao',
+    //   family: {
+    //     lover: 'oubao',
+    //     mother: 'mother',
+    //     father: 'father'
+    //   }
+    // }
+    // const {name,family:{lover,mother,father}}=pig
+    const person = [{
+      name: 'mengbao',
+      family: {
+        lover: 'oubao',
+        mother: 'mother',
+        father: 'father'
+      },
+      age: 1
+    }]
+    const [{ name, family: { lover, mother, father }, age }] = person
+    console.log(name)
+    console.log(lover)
+    console.log(mother)
+    console.log(father)
+    console.log(age)
+
+  </script>
+</body>
+
+</html>
